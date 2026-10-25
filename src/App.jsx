@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 
+// Define the API URL based on environment (Vite uses import.meta.env)
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function App() {
   const [longUrl, setLongUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
@@ -16,7 +19,8 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/url/shorten', {
+      // Use the dynamic API_URL variable here
+      const response = await fetch(`${API_URL}/api/url/shorten`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
