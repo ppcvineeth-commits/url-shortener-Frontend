@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 // Define the API URL based on environment (Vite uses import.meta.env)
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://url-shortener-backend-1-qe04.onrender.com';
 
 function App() {
   const [longUrl, setLongUrl] = useState('');
